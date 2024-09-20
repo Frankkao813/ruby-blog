@@ -1,0 +1,14 @@
+<% content_for :title, "New article" %>
+
+<h1>New article</h1>
+
+<!-- "form": Refers to the partial view file, typically named _form.html.erb.
+article: @article: This passes the @article instance variable (from the controller) to the partial as a local variable named article. -->
+
+<%= render "form", article: @article %>
+
+<br>
+
+<div>
+  <%= link_to "Back to articles", articles_path %>
+</div>
