@@ -8,3 +8,13 @@
 
   <%= button_to "Destroy this article", @article, method: :delete %>
 </div>
+
+<!--In _comments.html.erb, there is already partial defined-->
+<h2>Comments</h2>
+<%= render @article.comments %>
+
+
+<h2>Add a comment:</h2>
+<!--The second render just defines the partial template we want to render, comments/form. Rails is smart enough to spot the forward slash in that string and realize that you want to render the _form.html.erb file in the app/views/comments directory.-->
+<%= render "comments/form", article: @article, comment: @article.comments.build %>
+
